@@ -46,7 +46,7 @@ h1 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 6em;
+  font-size: 5em;
 }
 
 header {
@@ -55,22 +55,20 @@ header {
   height: 100px;
   justify-content: right;
   padding-top: 10px;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 }
 
-main {
-  padding-bottom: 120px;
-}
 
 footer {
   background-color: black;
-  display: flex;
+  color: white;
+  display: grid;
   height: 100px;
   width: 100%;
-  justify-content: right;
-  padding-bottom: 10px;
+  place-content: end center;
   position: fixed;
   bottom: 0px;
+  padding-bottom: 10px;
 }
 
 header a {
