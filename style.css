@@ -1,0 +1,83 @@
+@font-face {
+  font-family: rock;
+  src: url(fonts/rock3d-regular-webfont.woff2);
+}
+
+@font-face {
+  font-family: source code pro;
+  src: url(fonts/sourcecodepro-light-webfont.woff2);
+}
+
+@font-face {
+  font-family: art;
+  src: url(fonts/art_post-webfont.woff2);
+}
+
+@font-face {
+  font-family: bungee;
+  src: url(fonts/bungeehairline-regular-webfont.woff2);
+}
+
+@font-face {
+  font-family: press-start;
+  src: url(fonts/pressstart2p-regular-webfont.woff2);
+}
+
+* {
+  font-family: source code pro;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.typewrite,
+.wrap {
+  font-family: art;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 6em;
+}
+
+header {
+  background-color: black;
+  display: flex;
+  height: 100px;
+  justify-content: right;
+  padding-top: 10px;
+  margin-bottom: 120px;
+}
+
+main {
+  padding-bottom: 120px;
+}
+
+footer {
+  background-color: black;
+  display: flex;
+  height: 100px;
+  width: 100%;
+  justify-content: right;
+  padding-bottom: 10px;
+  position: fixed;
+  bottom: 0px;
+}
+
+header a {
+  color: white;
+  font-size: 1.2em;
+}
+
+header a:hover {
+  color: turquoise;
+}
