@@ -144,6 +144,7 @@ a:hover,
   border-radius: 25px;
   border-color: black;
   border-width: 5px;
+  box-shadow: 16px 16px 0px 0px #f500a0;
 }
 
 .about p {
@@ -158,6 +159,7 @@ a:hover,
   border-radius: 25px;
   border-color: black;
   border-width: 5px;
+box-shadow: 16px 16px 0px 0px #f500a0;
 }
 
 .contact p,
