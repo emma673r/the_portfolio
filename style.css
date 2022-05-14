@@ -81,11 +81,26 @@ footer {
   padding-bottom: 10px;
 }
 
-header a {
+header a, header p {
   color: white;
   font-size: 1.2em;
 }
 
+header p {
+  letter-spacing: -2px
+}
+
 header a:hover {
   color: turquoise;
+}
+
+.contact_wrapper {
+  display: flex;
+  gap: 20%;
+  padding : 0 50px 0 50px;
+}
+
+.contact_wrapper p {
+  width: 60ch;
+  line-height: 2.2;
 }
