@@ -23,22 +23,33 @@
   src: url(fonts/pressstart2p-regular-webfont.woff2);
 }
 
+@font-face {
+  font-family: elite;
+  src: url(fonts/specialelite-regular-webfont.woff2);
+}
+
 * {
   font-family: source code pro;
   margin: 0;
   padding: 0;
+  text-transform: lowercase;
+}
+
+address {
+  font-style: initial;
+}
+
+a {
+  color: white;
+}
+
+h1 {
+  padding-bottom: 80px;
 }
 
 img {
   height: 100%;
-  widtht: auto;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding-right: 1rem;
+  width: auto;
 }
 
 .typewrite,
@@ -54,53 +65,287 @@ h1 {
   font-size: 5em;
 }
 
-header img {
-  height: 50%;
-}
-
-header {
+nav {
   background-color: black;
   display: flex;
   height: 100px;
   justify-content: space-between;
-  padding-top: 10px;
-  margin-bottom: 100px;
+  padding-top: 20px;
+  margin-bottom: 80px;
   padding-left: 10px;
 }
-
 
 footer {
   background-color: black;
   color: white;
-  display: grid;
+  display: flex;
   height: 100px;
   width: 100%;
-  place-content: end center;
-  position: fixed;
-  bottom: 0px;
-  padding-bottom: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin-top: 180px;
 }
 
-header a, header p {
-  color: white;
+#footer_index {
+  position: fixed;
+  bottom: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+#footer_index div {
+  display: flex;
+  place-self: space-evenly;
+  gap: 10px;
+}
+
+.copy {
+  padding-left: 10px;
+}
+
+.soMe {
+  padding-right: 10px;
+}
+
+header a,
+header p {
   font-size: 1.2em;
 }
 
-header p {
-  letter-spacing: -2px
+.logo {
+  letter-spacing: -2px;
+  color: white;
+  text-decoration: none;
 }
 
-header a:hover {
-  color: turquoise;
+.logo:hover {
+  transform: scale(1.2) translateX(10px) translateY(6px);
+}
+
+a:hover,
+.nav-links a:hover {
+  color: #f500a0;
 }
 
 .contact_wrapper {
   display: flex;
-  gap: 20%;
-  padding : 0 50px 0 50px;
+  padding: 0 2% 0 2%;
+  justify-content: space-evenly;
 }
 
-.contact_wrapper p {
-  width: 60ch;
-  line-height: 2.2;
+.about {
+  width: auto;
+  display: grid;
+  justify-items: start;
+  max-width: 45ch;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 5px;
 }
+
+.about p {
+  padding-top: 15px;
+}
+
+.contact {
+  width: auto;
+  max-width: 45ch;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 5px;
+}
+
+.contact p,
+.contact address {
+  padding-top: 15px;
+}
+
+/* Burger menu */
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  text-transform: lowercase;
+}
+
+.nav-links a {
+  display: block;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+  transition: 0.5s ease;
+  transform: translateX(0%);
+}
+
+.nav-links a:hover {
+  letter-spacing: 5px;
+}
+
+.burger {
+  display: none;
+  position: fixed;
+  top: 6px;
+  left: 87%;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 760px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 8vh;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(100%);
+    transition: All 0.5s ease-in;
+    background: black;
+    opacity: 0.85;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  .nav-links a {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .contact_wrapper {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact,
+  .about {
+    width: auto;
+    margin-top: 30px;
+  }
+
+  .soMe {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .contact_wrapper {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact,
+  .about {
+    width: auto;
+    margin-top: 30px;
+  }
+  .soMe {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.nav-active {
+  transform: translateX(0);
+}
+
+@media only screen and (max-width: 460px) {
+  .nav-links {
+    width: 100%;
+    transition: All 0.5s ease;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .contact_wrapper {
+    display: block;
+    padding: 0;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .contact p,
+  .about p {
+    width: auto;
+  }
+
+  .contact,
+  .about {
+    width: auto;
+    margin-top: 30px;
+  }
+  .soMe {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.nav-active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Burger menu end */
