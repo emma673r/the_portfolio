@@ -1,39 +1,84 @@
+@font-face {
+  font-family: elite;
+  src: url(fonts/specialelite-regular-webfont.woff2);
+}
 
-    body{
-      margin: 0px;
-      padding: 0px;
-      background: #000;
-    }
+.mappe {
+    display: flex;
+    place-content: center;
+    width: 150px;
+    height: 105px;
+    margin: 0 auto;
+    margin-top: 50px;
+    position: relative;
+    background-color: #01ff19;
+    border-radius: 0 6px 6px 6px;
+    box-shadow: 4px 4px 7px #f500a0;
+    border-color: white;
+    color: black;
+}
 
-    main {
-        display: grid;
-    }
+h1 {
+    font-family: elite ;
+}
 
-    #terminal{
-        font-size: 14pt;
-        justify-self: center;
-        width:50%;
-        height: 100Vh;
-        font-family:monospace;
-        color:#01ff19;
-    }
 
-    #main{
-        height: 50vh;
-    }
+body{
+    margin: 0px;
+    padding: 0px;
+    background: #000;
+}
 
-    input{
-        background: inherit;
-        color:inherit;
-        border:transparent;
-        border-bottom: 1px solid #f500a0;
-    }
+main {
+    display: grid;
+}
 
-    #go{
-        cursor: pointer;
-    }
+#terminal{
+    font-size: 14pt;
+    justify-self: center;
+    width: 50%;
+    height: 100Vh;
+    font-family:monospace;
+    color:#01ff19;
+}
 
-    @media (max-width:700px) {
+#main{
+    height: 50vh;
+}
+
+input{
+    background: inherit;
+    color:inherit;
+    border:transparent;
+    border-bottom: 1px solid #f500a0;
+}
+
+#go{
+    cursor: pointer;
+}
+
+
+.sections {
+    display: none;
+
+}
+
+.show {
+    display: block;
+    color: #f500a0;
+}
+
+#section_2 {
+    padding-bottom: 150px;
+}
+
+footer {
+    position: fixed;
+  bottom: 0px;
+  padding-bottom: 15px;
+  margin: 0;}
+
+@media (max-width:700px) {
 
     #terminal{
         font-size: 10pt;
@@ -41,5 +86,5 @@
         width:100%;
         padding: 15px;
     }
-    }
+}
    
