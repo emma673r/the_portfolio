@@ -80,12 +80,16 @@
         switch (command) {
           case "list":
             main.innerHTML =
-            "List of commands:</br>kea</br>clear</br></br>";
+            "List of commands:</br>kea</br>perso</br>clear</br></br>";
             commandPrompt();
             break;
 
         case "kea":
             kea();
+            break;
+
+        case "perso":
+            perso();
             break;
 
         case "clear":
@@ -178,6 +182,19 @@
         main.appendChild(section_2);
       }
 
+
+      ///////////////////////////////////
+      ////        Perso             /////
+      ///////////////////////////////////
+
+      function perso() {
+          progressBar();
+          setTimeout(showPerso, 2000);
+      }
+
+      function showPerso() {
+          console.log("showPerso")
+      }
 
     </script>
   </body>
