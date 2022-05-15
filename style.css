@@ -53,8 +53,14 @@ h2 {
 }
 
 img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100%;
+}
+
+.contact_pic {
+  width: 80%;
+  height: auto;
+  border: solid 2px black;
 }
 
 .typewrite,

@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav id="web_nav">
         <a href="index.html" class="logo">emma pasquer.</a>
         <ul class="nav-links">
           <a href="index.html">Home</a>
@@ -28,30 +28,24 @@
     <main>
 
     <div id="terminal">
+        >accessing emma pasquer's personal files... </br>
+        >bypassing <del>high tech</del> security..</br>
+        >system_breached..... </br>
     </br>
   --------------------------------------------------
   </br>
-  > WELCOME TO Em's web design HACKER TERMINAL. </br>
-  > hack yourself into emma's projects by writing the right commands.
-  > type list to get all supported commands.</br>
-  > all commands must be typed in lowercase.</br>
+  >WELCOME TO Em's <del>deep</del> web design <em>HACKER TERMINAL.</em></br>
+  >hack yourself into emma's projects by writing the right commands. </br>
+  >type list to get all supported commands.</br>
+  >all commands must be typed in lowercase.</br>
   --------------------------------------------------
 </br>
   <div id="main">
   </div>
 </div>
-<section id="section_1" class="sections">
-    <h1>kea projects</h1>
-</section>
 
-<section id="section_2" class="sections">
-    <a href="project_1.html" class="mappe">Project 1
-    </a>
-    <a href="#" class="mappe">Project 2</a>
-    <a href="#" class="mappe">Project 3</a>
-</section>
 </main>
-    <footer>
+    <footer id="web_footer">
       <div class="copy">&copy Emma Pasquer 2022</div>
       <div class="soMe">
         <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/"
@@ -80,7 +74,7 @@
         switch (command) {
           case "list":
             main.innerHTML =
-            "List of commands:</br>kea</br>perso</br>clear</br></br>";
+            "List of commands:</br>kea</br>perso</br>clear</br>answer</br></br>";
             commandPrompt();
             break;
 
@@ -94,6 +88,10 @@
 
         case "clear":
             clear();
+            break;
+
+        case "answer":
+            answer();
             break;
 
           default:
@@ -110,7 +108,8 @@
         var test = document.createElement("div");
         main.appendChild(test);
         test.innerHTML =
-          "</br>ur_hacker@username:><input id='command' type='text'/><input id='go' type='button'value='Go' onclick='getCommand()'/></br></br>";
+          "</br>ur_h4ck3r@username:  ><input id='command' type='text'/><input id='go' type='button'value='Go' onclick='getCommand()'/></br></br>";
+          test.style.position = "sticky 900px"
       }
 
       ////////////////////////////////////
@@ -118,8 +117,9 @@
       ////////////////////////////////////
 
       function clear() {
-        main.innerHTML =
-          "ur_hacker@username:><input id='command' type='text'/><input id='go' type='button'value='Go' onclick='getCommand()'/></br></br>";
+        // main.innerHTML =
+        //   "ur_hacker@username:  ><input id='command' type='text'/><input id='go' type='button'value='Go' onclick='getCommand()'/></br></br>";
+        location.reload(); 
       }
 
       ///////////////////////////////////
@@ -154,32 +154,44 @@
           console.log("showKea")
           var main = document.getElementById("main");
 
-          let section_1 = document.getElementById("section_1");
-          section_1.classList.toggle("show");
-          main.appendChild(section_1);
+        //   let section_kea = document.getElementById("section_kea");
+          let section_kea = document.createElement("h3");
+        //   section_kea.classList.toggle("show");
+          main.appendChild(section_kea);
+          section_kea.innerHTML = "kea projects."
 
-          var whatToDo = document.createElement("div");
+          let whatToDo = document.createElement("div");
           main.appendChild(whatToDo);
-          whatToDo.innerHTML = "What do you want to do with that ? </br> click on the directory you wish to enter";
-        //   var command = document.getElementById("command").value;
-        //   switch (command) {
-        //         case "y":
-        //         openKea();
-        //         break;
-        //         case "n":
-        //         defaultFunction();
-        //   }
-       setTimeout(openKea, 1000);
 
-         
+          window.scrollTo(0, 1000);
+          whatToDo.style.paddingBottom = "110px";
+          whatToDo.style.transition = "2s";
+          whatToDo.innerHTML = "What do you want to do with that ? </br> click on the directory you wish to enter";
+
+       setTimeout(openKea, 1000); 
       }
 
       function openKea() {
-        console.log("openKea");
+            console.log("openKea");
 
-        let section_2 = document.getElementById("section_2");
-        section_2.classList.toggle("show");
-        main.appendChild(section_2);
+            progressBar()
+            let section_kea_project1 = document.createElement("a");
+            section_kea_project1.href = "project_kea_1.html"
+            section_kea_project1.innerHTML = "project_1"
+            main.appendChild(section_kea_project1);
+            section_kea_project1.style.transition = "2s";
+            section_kea_project1.style.paddingBottom = "110px";
+            section_kea_project1.style.breakAfter;
+            window.scrollTo(0, 2400);
+
+            let section_kea_project2 = document.createElement("a");
+            section_kea_project2.href = "project_kea_2.html"
+            section_kea_project2.innerHTML = "project_2"
+            main.appendChild(section_kea_project2);
+            section_kea_project2.style.transition = "2s";
+            section_kea_project2.style.paddingBottom = "110px";
+            window.scrollTo(0, 2400);
+
       }
 
 
@@ -193,8 +205,50 @@
       }
 
       function showPerso() {
-          console.log("showPerso")
+          console.log("showPerso");
+          var main = document.getElementById("main");
+
+          let section_perso = document.createElement("h3");
+          main.appendChild(section_perso);
+          section_perso.innerHTML = "own projects."
+
+          let whatToDoNow = document.createElement("div");
+          main.appendChild(whatToDoNow);
+
+          window.scrollTo(0, 1000);
+          whatToDoNow.style.paddingBottom = "110px";
+          whatToDoNow.style.transition = "2s";
+          whatToDoNow.innerHTML = "What do you want to do with that ? </br> i dare to click on one of them. go on.";
+
+       setTimeout(openPerso, 1000); 
       }
+
+      function openPerso() {
+            console.log("openPerso");
+
+            progressBar()
+            let section_perso_project1 = document.createElement("a");
+            section_perso_project1.href = "project_perso_1.html"
+            section_perso_project1.innerHTML = "project_perso_1"
+            main.appendChild(section_perso_project1);
+            section_perso_project1.style.transition = "2s";
+            section_perso_project1.style.paddingBottom = "110px";
+            section_perso_project1.style.breakAfter;
+            window.scrollTo(0, 2400);
+      }
+
+
+      ///////////////////////////////////
+      ////        Answer            /////
+      ///////////////////////////////////
+        function answer() {
+            console.log("showPerso");
+            var main = document.getElementById("main");
+
+            let answer_is = document.createElement("h3");
+            main.appendChild(answer_is);
+            answer_is.innerHTML = "42."
+        }
 
     </script>
   </body>
