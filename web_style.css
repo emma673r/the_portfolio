@@ -1,0 +1,45 @@
+
+    body{
+      margin: 0px;
+      padding: 0px;
+      background: #000;
+    }
+
+    main {
+        display: grid;
+    }
+
+    #terminal{
+        font-size: 14pt;
+        justify-self: center;
+        width:50%;
+        height: 100Vh;
+        font-family:monospace;
+        color:#01ff19;
+    }
+
+    #main{
+        height: 50vh;
+    }
+
+    input{
+        background: inherit;
+        color:inherit;
+        border:transparent;
+        border-bottom: 1px solid #f500a0;
+    }
+
+    #go{
+        cursor: pointer;
+    }
+
+    @media (max-width:700px) {
+
+    #terminal{
+        font-size: 10pt;
+        justify-self: auto;
+        width:100%;
+        padding: 15px;
+    }
+    }
+   
