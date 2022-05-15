@@ -47,6 +47,11 @@ h1 {
   padding-bottom: 80px;
 }
 
+h2 {
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
 img {
   height: 100%;
   width: auto;
@@ -98,6 +103,31 @@ footer {
   display: flex;
   place-self: space-evenly;
   gap: 10px;
+}
+
+.some_btn {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  transition: 0.25s;
+  color: #f500a0;
+  box-shadow: 0.3em 0.3em 0 0 #f500a0, inset 0.3em 0.3em 0 0 #f500a0;
+}
+
+.some_btn a {
+  color: black;
+}
+.some_btn a:hover {
+  color: white;
+}
+
+.some_btn:hover,
+.some_btn:focus {
+  color: black;
+  box-shadow: 0 0 0 0 #f500a0, inset 6em 3.5em 0 0 #f500a0;
 }
 
 .copy {
@@ -159,7 +189,7 @@ a:hover,
   border-radius: 25px;
   border-color: black;
   border-width: 5px;
-box-shadow: 16px 16px 0px 0px #f500a0;
+  box-shadow: 16px 16px 0px 0px #f500a0;
 }
 
 .contact p,
