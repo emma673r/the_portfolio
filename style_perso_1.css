@@ -1,0 +1,184 @@
+@font-face {
+  font-family: Varela;
+  src: url(fonts/varelaround-regular-webfont.woff2);
+}
+
+@font-face {
+  font-family: Oliver;
+  src: url(fonts/oliver-regular-webfont.woff2);
+}
+
+
+.wrapper {
+  display: flex;
+  padding: 0 2% 0 2%;
+  justify-content: space-evenly;
+}
+
+.wrappee {
+  width: auto;
+  display: grid;
+  justify-items: start;
+  max-width: 45ch;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 5px;
+  box-shadow: 16px 16px 0px 0px #f500a0;
+}
+
+.about p {
+  padding-top: 15px;
+}
+
+h1 {
+  font-family: "oliver";
+  font-weight: 100;
+  font-size: 2.5em;
+  color: hsl(324, 100%, 46%);
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  font-family: "varela";
+  font-weight: 100;
+}
+
+div.eight-ball {
+  background-color: hsl(324, 100%, 46%);
+  border: 5px solid black;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px; */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.answer {
+  background-color: black;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  margin: 25% auto;
+}
+
+p#eight {
+  font-family: "oliver";
+  font-size: 6em;
+  margin: 20% auto;
+  color: white;
+}
+
+#answer {
+  font-family: "oliver";
+  padding: 23px;
+  padding-top: 14px;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+#question {
+  font-family: "varela";
+  margin: 20px;
+  padding: 10px;
+  width: 400px;
+  font-size: 22px;
+}
+
+#info {
+  font-size: 22px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* for iphone */
+
+  html {
+    border-width: 15px;
+  }
+
+  #content {
+    width: 200px;
+    margin-top: 10px;
+  }
+
+  div.eight-ball {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    /* box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px; */
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+      rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  .answer {
+    border: 1.5px solid white;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    margin: 20% auto;
+    font-size: 8px;
+  }
+
+  #answer {
+    margin-top: 10%;
+    font-size: 9px;
+  }
+
+  p#eight {
+    font-size: 4rem;
+  }
+
+  #question {
+    margin: 20px;
+    padding: 10px;
+    width: 150px;
+    height: fit-content;
+    font-size: 8;
+  }
+
+  #info {
+    font-size: 1.5rem;
+  }
+}

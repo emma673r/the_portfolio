@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project perso 1</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_perso_1.css" />
   </head>
   <body>
     <header>
@@ -24,18 +25,109 @@
         </div>
       </nav>
     </header>
-    <main>project perso 1
-
-      i think ma eight ball
+    <main>
+      <h1>Emma's Magic 8 ball</h1>
+      <div class="wrapper">
+        <section class="wrappee">
+          <h2>About the project.</h2>
+          <p>I wanted to practice javascript and made an eight ball.</p>
+          <p>
+            I got inspired by a school project where we learned math and random.
+          </p>
+          <p>I thought i could use it to make my own eight ball.</p>
+          <p>
+            to make it funnier (mainly for myself), i decided to make the
+            answers sarcastic.
+          </p>
+          <p>enjoy.</p>
+        </section>
+      </div>
+      <section>
+        <div id="content">
+          <p id="info">
+            Ask me something and click on the Magic 8 Ball to get your answer.
+            <br /><br />
+            If you Dare.
+          </p>
+          <input type="text" id="question" />
+          <div id="eight-ball" class="eight-ball">
+            <div class="answer">
+              <p id="eight">8</p>
+              <p id="answer"></p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="copy">&copy Emma Pasquer 2022</div>
       <div class="soMe">
-        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/">linkedin</a>
+        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/"
+          >linkedin</a
+        >
         <a href="https://www.instagram.com/emma_pasquer_art/">instagram</a>
-        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw">youtube</a>
+        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw"
+          >youtube</a
+        >
       </div>
     </footer>
     <script src="script.js"></script>
+    <script>
+      // we define answers
+      let answers = [
+        "42.",
+        "Haha.",
+        "You should get that tattooed bro",
+        "1. Put in a box. 2. Throw box away.",
+        "Ask your mom about it",
+        "Ah I see. Yes.",
+        "Meh.",
+        "Go f yourself friend.",
+        "Yes, i guess",
+        "The star tell me that maybe",
+        "For sure honey!!",
+        "My reply is    no.",
+        "I dont want to answer THAT",
+        "Go girl !!!!!!",
+        "Forget about it",
+        "Was it your idea ?...",
+        "Ask again...eh .. never. thx xoxo",
+        "If your friends did it, would you ?",
+        "Not in the mood now, ask later",
+        "Try and sound smart, ask again",
+        "Sleep on it",
+        "Go for a walk and ask your village idiot",
+        "Think.... just for a minute bro",
+        "You already know the answer freak",
+      ];
+
+      let eight = document.querySelector("#eight");
+      let answer = document.querySelector("#answer");
+      let eightball = document.querySelector("#eight-ball");
+      let question = document.querySelector("#question");
+
+      window.addEventListener("load", sidenVises);
+
+      function sidenVises() {
+        eightball.addEventListener("click", clickEightBall);
+      }
+
+      function clickEightBall() {
+        eightball.classList.add("shake");
+
+        if (question.value.length < 1) {
+          alert("Did you forget your question?");
+        } else {
+          eight.textContent = "";
+          let num = Math.floor(Math.random() * Math.floor(answers.length));
+          console.log(num);
+          answer.textContent = answers[num];
+        }
+        eightball.addEventListener("animationend", shakeRemove);
+      }
+      function shakeRemove() {
+        eightball.classList.remove("shake");
+      }
+    </script>
   </body>
 </html>
