@@ -168,13 +168,18 @@
           whatToDo.style.transition = "2s";
           whatToDo.innerHTML = "What do you want to do with that ? </br> click on the directory you wish to enter";
 
-       setTimeout(openKea, 1000); 
+       setTimeout(progressKea, 1000); 
+      }
+
+      function progressKea() {
+        progressBar()
+        setTimeout(openKea, 2200); 
       }
 
       function openKea() {
             console.log("openKea");
 
-            progressBar()
+            
             let section_kea_project1 = document.createElement("a");
             section_kea_project1.href = "project_kea_1.html"
             section_kea_project1.innerHTML = "project_1"
@@ -220,13 +225,19 @@
           whatToDoNow.style.transition = "2s";
           whatToDoNow.innerHTML = "What do you want to do with that ? </br> i dare to click on one of them. go on.";
 
-       setTimeout(openPerso, 1000); 
+       setTimeout(progressPerso, 2200); 
       }
+
+            function progressPerso() {
+        progressBar()
+        setTimeout(openPerso, 2200); 
+      }
+
 
       function openPerso() {
             console.log("openPerso");
 
-            progressBar()
+
             let section_perso_project1 = document.createElement("a");
             section_perso_project1.href = "project_perso_1.html"
             section_perso_project1.innerHTML = "project_perso_1"
