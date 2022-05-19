@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project kea 1</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="spil_style.css" />
   </head>
   <body>
     <header>
@@ -24,17 +25,164 @@
         </div>
       </nav>
     </header>
-    <main>project 1
-      i think le jeu video
+    <main id="screen">
+      <div id="game">
+        <div id="game_background">
+          <div id="bar_container">
+            <div id="bar_sprite"></div>
+          </div>
+          <div id="stool1_container">
+            <div id="stool1_sprite"></div>
+          </div>
+          <div id="stool2_container"><div id="stool2_sprite"></div></div>
+          <div id="stool3_container"><div id="stool3_sprite"></div></div>
+        </div>
+        <div id="game_elements">
+          <div id="home3" class="button"></div>
+          <div id="settings" class="button"></div>
+
+          <div id="barmaid_container">
+            <div id="barmaid_sprite" class="breathe"></div>
+          </div>
+          <div id="youman_container">
+            <div id="youman_sprite" class="breathe"></div>
+          </div>
+          <div id="youmanlegs_container">
+            <div id="youmanlegs_sprite" class="breathe"></div>
+          </div>
+          <div id="beerfull_container" class="">
+            <div id="beerfull_sprite"></div>
+          </div>
+          <div id="waterfull_container" class="">
+            <div id="waterfull_sprite"></div>
+          </div>
+          <div id="shotfull_container" class="">
+            <div id="shotfull_sprite"></div>
+          </div>
+          <div id="brokenglass_container" class="">
+            <div id="brokenglass_sprite"></div>
+          </div>
+          <div id="heart_container" class="no_display">
+            <div id="heart_sprite" class=""></div>
+          </div>
+        </div>
+
+        <div id="game_ui">
+          <div id="score_board"><p id="score_count"></p></div>
+          <div id="energy_board">
+            <div id="liv1">
+              <img src="assets/ui_elements/life.svg" alt="life" />
+            </div>
+            <div id="liv2">
+              <img src="assets/ui_elements/life.svg" alt="life" />
+            </div>
+            <div id="liv3">
+              <img src="assets/ui_elements/life.svg" alt="life" />
+            </div>
+          </div>
+          <div id="time_board"><div id="time_sprite"></div></div>
+        </div>
+      </div>
+      <div id="start">
+        <div id="start_background">
+          <div id="info" class="button"></div>
+          <div id="how_to_play">
+            <img id="rules" src="assets/ui_elements/rules.svg" alt="rules" />
+            <img
+              id="get_lucky"
+              class="button"
+              src="assets/ui_elements/get_lucky.svg"
+              alt="get lucky button"
+            />
+          </div>
+
+          <div id="womanstart"></div>
+          <div>
+            <img
+              id="start_knap"
+              class="button"
+              src="assets/ui_elements/play.svg"
+              alt="play button"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="settings_screen">
+        <div>
+          <img
+            id="setting_pop"
+            src="assets/ui_elements/settings_screen.svg"
+            alt="settings"
+          />
+          <img
+            id="music_button"
+            class="button"
+            src="assets/ui_elements/music.svg"
+            alt="music button"
+          />
+          <img
+            id="sounds_button"
+            class="button"
+            src="assets/ui_elements/sound.svg"
+            alt="sound button"
+          />
+        </div>
+        <div>
+          <img id="no_music" src="assets/ui_elements/no.svg" alt="no music" />
+          <img id="no_sounds" src="assets/ui_elements/no.svg" alt="no sounds" />
+        </div>
+      </div>
+      <div
+        id="game_over"
+        class="game_over_hospital_background game_over_taxi_background game_over_bike_background"
+      >
+        <div id="replay1" class="button"></div>
+        <div id="home1" class="button"></div>
+        <div id="gameover_points"></div>
+      </div>
+      <div id="level_complete" class="">
+        <div id="level_complete_background">
+          <div id="replay2" class="button"></div>
+          <div id="home2" class="button"></div>
+          <div id="next" class="button"></div>
+          <div id="winlevel_points"></div>
+        </div>
+      </div>
+      <div id="sound_effects">
+        <audio id="shattering_sound1" src="sounds/shattering.mp3"></audio>
+        <audio id="shattering_sound2" src="sounds/shattering.mp3"></audio>
+        <audio id="shattering_sound3" src="sounds/shattering.mp3"></audio>
+        <audio id="shattering_sound4" src="sounds/shattering.mp3"></audio>
+
+        <audio id="drik_sound" src="sounds/drink_drunk.mp3"></audio>
+
+        <audio
+          id="outofhere_sound"
+          src="sounds/lets_get_out_of_here.mp3"
+        ></audio>
+      </div>
+      <div id="music">
+        <audio id="background_sound" src="sounds/background.mp3"></audio>
+        <audio id="hospital_sound" src="sounds/weeuuweeuu.mp3"></audio>
+        <audio id="bike_sound" src="sounds/Mandegrad.mp3"></audio>
+        <audio id="taxi_sound" src="sounds/taxi.mp3"></audio>
+        <audio id="moto_sound" src="sounds/moto.mp3"></audio>
+        <audio id="myplace_sound" src="sounds/my_place.mp3"></audio>
+      </div>
     </main>
     <footer>
       <div class="copy">&copy Emma Pasquer 2022</div>
       <div class="soMe">
-        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/">linkedin</a>
+        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/"
+          >linkedin</a
+        >
         <a href="https://www.instagram.com/emma_pasquer_art/">instagram</a>
-        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw">youtube</a>
+        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw"
+          >youtube</a
+        >
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="spil_script.js"></script>
   </body>
 </html>
