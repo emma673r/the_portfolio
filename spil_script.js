@@ -194,7 +194,7 @@ function startGame() {
 
   document.querySelector("#time_sprite").classList.add("timer");
   document
-    .querySelector("#time_board")
+    .querySelector("#time_sprite")
     .addEventListener("animationend", stopSpil);
 
   //********************random delay på elementerne
