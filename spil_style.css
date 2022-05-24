@@ -4,6 +4,44 @@
   src: url(fonts/oliver-regular-webfont.woff2);
 }
 
+main {
+margin-top: 30px;
+}
+
+h1 {
+  font-family: "oliver";
+  font-weight: 100;
+  font-size: 2.5em;
+  color: hsl(324, 100%, 46%);
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  padding: 0 2% 0 2%;
+  justify-content: space-evenly;
+}
+
+.wrappee {
+  width: auto;
+  display: grid;
+  justify-items: start;
+  max-width: 45ch;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 5px;
+  box-shadow: 16px 16px 0px 0px #f500a0;
+}
+
+nav {
+  margin-bottom: 0;
+}
+footer {
+  margin-top: 0;
+}
+
 #screen {
   width: 100%;
   aspect-ratio: 16/9;
