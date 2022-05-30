@@ -32,17 +32,39 @@
         >bypassing <del>high tech</del> security..</br>
         >system_breached..... </br>
     </br>
-  --------------------------------------------------
+  ----------------------------------------
   </br>
   >WELCOME TO Em's <del>deep</del> web design <em>HACKER TERMINAL.</em></br>
   >hack yourself into emma's projects by writing the right commands. </br>
   ><b class="extra_bold">type list to get all supported commands.</b></br>
   >all commands must be typed in lowercase.</br>
-  --------------------------------------------------
+  ---------------------------------------
 </br>
   <div id="main">
   </div>
 </div>
+  <div id="glitch" class="glitch_container">
+  <img class=" glitch_sprite opacity" src="pics/web_glitch/glitch_help.svg" alt="glitch help">
+</div>
+<section id="helpopup">
+  <div>
+    <button class="cross"> x </button>
+    <h2>How does this work ?</h2>
+    <p>Obviously you're note really hacking into my system to see my private files.</p>
+    <p><del>(How cool would that be though ?)</del></p>
+    <br>
+    <p>So the deal is, you have to <em>write a word</em> (or command) on the pink line.</p>
+    <p>But what word should you write, you'd ask me. Good question.</p>
+    <p>Is you write <em>list</em> on there and <em>click the "go" button</em>,<br>it'll show you a list of all the commands available.</p>
+    <p>This way you get to chose what you want to see.</p>
+    <p>I have a KEA file, which showcases my KEA (the school i'm at) projects. <del>the ones i'm proud of</del></p>
+    <p>I have a perso file, wich are the projects I've made on my own <del>for fun.</del></p>
+    <p>And you also have a small easter egg</p>
+    <p>but now that you have the gist of it, i'll let you find that out by yourself.</p>
+    <p>enjoy.</p>
+  </div>
+  <img src="pics/web_glitch/glitch.svg" alt="glitch">
+</section>
 
 </main>
     <footer id="web_footer">
@@ -59,6 +81,25 @@
     </footer>
     <script src="script.js"></script>
     <script>
+
+      const glitch = document.querySelector("#glitch");
+      const helpopup = document.querySelector("#helpopup");
+      const cross = document.querySelector(".cross");
+
+      glitch.addEventListener("click", showGlitch);
+      helpopup.style.display = "none";
+
+      function showGlitch() {
+        helpopup.style.display = "flex";
+        glitch.style.display = "none"
+        cross.addEventListener("click", offGlitch);       
+      }
+
+      function offGlitch() {
+        helpopup.style.display = "none";
+        glitch.style.display = "block";
+      }
+
       window.onload = function () {
         // engage();
         commandPrompt();
@@ -262,6 +303,8 @@
             answer_is.innerHTML = "42."
         }
 // could be cool si pour le jeu ca pouvait etre comme si tu telechargeais un .exe de la demo ? mais apres ca suit pas le breadcrumbing.....
+
+
     </script>
   </body>
 </html>
