@@ -71,7 +71,7 @@ main {
   height: 100vh;
   font-family: monospace;
   color: #01ff19;
-  z-index: 10;
+  z-index: 3;
   padding-left: 20px;
 }
 
@@ -111,6 +111,7 @@ input {
   aspect-ratio: 580/440;
   top: 37%;
   left: 64%;
+  z-index: 100;
 }
 
 .glitch_sprite {
@@ -165,6 +166,7 @@ footer {
   bottom: 0px;
   padding-bottom: 15px;
   margin: 0;
+  z-index: 100;
 }
 
 #helpopup {
@@ -179,7 +181,7 @@ footer {
   position: fixed;
   top: 5%;
   left: 15%;
-  z-index: 10;
+  z-index: 300;
 }
 
 #helpopup em {
@@ -189,7 +191,7 @@ footer {
 #helpopup img {
   max-height: 500px;
   display: flex;
-  place-self: center; 
+  place-self: center;
 }
 
 #helpopup p {
@@ -214,9 +216,17 @@ footer {
   }
 
   .glitch_container {
-    width: 45%;
+    width: 55%;
     top: 57%;
-    left: 64%;
+    left: 55%;
+  }
+
+  #helpopup {
+    left: 0;
+  }
+
+  #helpopup img {
+width: 60%;
   }
 }
 
@@ -230,5 +240,11 @@ footer {
     width: 55%;
     top: 8%;
     left: 15%;
+    z-index: 999;
+  }
+
+  #helpopup {
+    top: ;
+    left: ;
   }
 }
