@@ -1,0 +1,787 @@
+/* spil v2 */
+@font-face {
+  font-family: oliver;
+  src: url(fonts/oliver-regular-webfont.woff2);
+}
+
+main {
+margin-top: 30px;
+}
+
+h1 {
+  font-family: "oliver";
+  font-weight: 100;
+  font-size: 2.5em;
+  color: hsl(324, 100%, 46%);
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  padding: 0 2% 0 2%;
+  justify-content: space-evenly;
+}
+
+.wrappee {
+  width: auto;
+  display: grid;
+  justify-items: start;
+  max-width: 45ch;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 5px;
+  box-shadow: 16px 16px 0px 0px #f500a0;
+}
+
+nav {
+  margin-bottom: 0;
+}
+footer {
+  margin-top: 0;
+}
+
+#screen {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  overflow: hidden;
+}
+
+#game_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-image: url(background/gamescreen/gamescreen.png);
+  background-size: cover;
+}
+
+#start {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+#start_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  background-image: url(background/titlescreen/titlescreen.svg);
+}
+
+#start_knap {
+  width: 20%;
+  aspect-ratio: 540/530;
+  position: absolute;
+  top: 59%;
+  left: 39.5%;
+  z-index: 0;
+}
+
+#womanstart {
+  width: 50%;
+  aspect-ratio: 525/549;
+  position: absolute;
+  top: 7%;
+  left: 43%;
+  background-image: url(assets/chara_elementer/you_woman.svg);
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#rules {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 8%;
+  left: 0%;
+  z-index: 3;
+}
+
+#get_lucky {
+  width: 15%;
+  height: 100%;
+  position: absolute;
+  top: 35%;
+  left: 65%;
+  z-index: 3;
+}
+
+#settings_screen {
+  width: 31%;
+  height: 90%;
+  position: absolute;
+  top: 1%;
+  left: 64.5%;
+  z-index: 7;
+}
+
+#music_button {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: 4.5%;
+  left: 65%;
+  z-index: 3;
+}
+
+#sounds_button {
+  width: 17%;
+  height: auto;
+  position: absolute;
+  top: 17%;
+  left: 67%;
+  z-index: 3;
+}
+
+#no_music {
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: 4.5%;
+  left: 65%;
+  z-index: 3;
+}
+
+#no_sounds {
+  width: 17%;
+  height: auto;
+  position: absolute;
+  top: 17%;
+  left: 67%;
+  z-index: 3;
+}
+
+#game_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.game_over_hospital_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  background-image: url(background/gameoverscreen/lose_3_hospital.png);
+}
+.game_over_taxi_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  background-image: url(background/gameoverscreen/lose_2_taxi.png);
+}
+.game_over_bike_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  background-image: url(background/gameoverscreen/lose_1_bike.png);
+}
+
+#replay1 {
+  width: 10%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  background-image: url(assets/ui_elements/replay.svg);
+  background-size: cover;
+  filter: drop-shadow(0px 0px 5px white);
+  z-index: 1;
+}
+#replay2 {
+  width: 4%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 1%;
+  left: 6%;
+  background-image: url(assets/ui_elements/replay.svg);
+  background-size: cover;
+  filter: drop-shadow(0px 0px 2px white);
+  z-index: 1;
+}
+
+#home1 {
+  width: 10%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 60%;
+  left: 85%;
+  background-image: url(assets/ui_elements/home.svg);
+  background-size: cover;
+  filter: drop-shadow(0px 0px 2px white);
+  z-index: 1;
+}
+#home2 {
+  width: 4%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  background-image: url(assets/ui_elements/home.svg);
+  background-size: cover;
+  filter: drop-shadow(0px 0px 5px white);
+  z-index: 1;
+}
+#next {
+  width: 20%;
+  aspect-ratio: 370/185;
+  position: absolute;
+  top: 80%;
+  left: 78%;
+  background-image: url(assets/ui_elements/next.svg);
+  background-size: cover;
+  filter: drop-shadow(0px 0px 5px white);
+  z-index: 1;
+}
+
+#level_complete {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+#level_complete_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  background-image: url(background/winlevelscreen/win_moto.png);
+}
+
+/* background elements */
+#bar_container {
+  position: absolute;
+  width: 87%;
+  aspect-ratio: 2000/895;
+  top: 50.5%;
+  left: -4%;
+  z-index: 1;
+}
+
+#bar_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/bar.svg);
+  background-size: cover;
+}
+
+#stool1_container {
+  position: absolute;
+  width: 18%;
+  aspect-ratio: 445/865;
+  top: 68%;
+  left: 1%;
+  z-index: 1;
+}
+
+#stool1_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/stool.svg);
+  background-size: cover;
+}
+
+#stool2_container {
+  position: absolute;
+  width: 18%;
+  aspect-ratio: 445/865;
+  top: 68%;
+  left: 25%;
+  z-index: 1;
+}
+
+#stool2_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/stool.svg);
+  background-size: cover;
+}
+
+#stool3_container {
+  position: absolute;
+  width: 18%;
+  aspect-ratio: 445/865;
+  top: 68%;
+  left: 53%;
+  z-index: 2;
+}
+
+#stool3_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/stool.svg);
+  background-size: cover;
+}
+/* game elements */
+
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  pointer-events: none;
+}
+
+#barmaid_container {
+  position: absolute;
+  width: 21%;
+  aspect-ratio: 420/655;
+  top: 3.5%;
+  left: -2%;
+  z-index: 0;
+}
+
+#barmaid_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/chara_elementer/barmaid.svg);
+  background-size: cover;
+}
+
+#youman_container {
+  position: absolute;
+  width: 22%;
+  aspect-ratio: 525/795;
+  top: 17%;
+  left: 49%;
+  z-index: 2;
+}
+
+#youman_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/chara_elementer/you_man.svg);
+  background-size: cover;
+}
+
+#youmanlegs_container {
+  position: absolute;
+  width: 12%;
+  aspect-ratio: 315/700;
+  top: 66%;
+  left: 55.5%;
+  z-index: 1;
+}
+
+#youmanlegs_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/chara_elementer/you_man_legs.svg);
+  background-size: cover;
+}
+
+#beerfull_container {
+  position: absolute;
+  width: 7%;
+  aspect-ratio: 135/215;
+  z-index: 1;
+}
+
+#beerfull_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(assets/ui_elements/beer_full.svg);
+}
+
+#waterfull_container {
+  position: absolute;
+  width: 7%;
+  aspect-ratio: 135/215;
+  z-index: 1;
+}
+
+#waterfull_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/water_full.svg);
+  background-size: cover;
+}
+
+#shotfull_container {
+  position: absolute;
+  width: 7%;
+  aspect-ratio: 135/215;
+  z-index: 1;
+}
+
+#shotfull_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/shot_full.svg);
+  background-size: cover;
+}
+
+#brokenglass_container {
+  position: absolute;
+  width: 7%;
+  aspect-ratio: 135/215;
+  z-index: 1;
+}
+
+#brokenglass_sprite {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(assets/ui_elements/broken_glass.svg);
+}
+
+#heart_container {
+  position: absolute;
+  width: 7%;
+  aspect-ratio: 190/270;
+  top: 9%;
+  left: 12%;
+  z-index: 1;
+}
+
+#heart_sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/ui_elements/heart.svg);
+  background-size: cover;
+}
+
+#home3 {
+  width: 3.5%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 1.5%;
+  left: 1%;
+  background-image: url(assets/ui_elements/home.svg);
+  background-size: cover;
+  z-index: 1;
+}
+
+#settings {
+  width: 3%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 1.5%;
+  left: 96%;
+  background-image: url(assets/ui_elements/settings.svg);
+  background-size: cover;
+  z-index: 1;
+}
+
+#info {
+  width: 8%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 3%;
+  left: 90%;
+  background-image: url(assets/ui_elements/info.svg);
+  filter: drop-shadow(0px 0px 10px white);
+  background-size: cover;
+  z-index: 1;
+}
+
+.button:hover {
+  transform: scale(1.18);
+}
+/* ui elements */
+
+#time_board {
+  width: 9%;
+  aspect-ratio: 190/655;
+  position: absolute;
+  top: 44%;
+  left: 89.5%;
+  background-image: url(assets/ui_elements/time_bottle.svg);
+  background-size: cover;
+  z-index: 1;
+}
+
+#time_sprite {
+  width: 100%;
+  aspect-ratio: 190/655;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background-image: url(assets/ui_elements/time_bottle_inner.svg);
+  background-size: cover;
+  z-index: 2;
+}
+
+#score_board {
+  width: 9%;
+  aspect-ratio: 135/230;
+  position: absolute;
+  top: 70%;
+  left: 3%;
+  background-image: url(assets/ui_elements/points.svg);
+  background-size: cover;
+  filter: drop-shadow(0px 0px 15px white);
+  z-index: 1;
+}
+
+#score_count {
+  top: 30%;
+  left: 35%;
+  position: absolute;
+  font-size: 80px;
+  font-family: "oliver";
+  color: hsl(323, 100%, 43%);
+  z-index: 1;
+}
+
+#energy_board {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  aspect-ratio: 85/125;
+  position: absolute;
+  top: 52%;
+  left: 2%;
+  z-index: 1;
+}
+
+#energy_board img {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  filter: drop-shadow(0px 0px 10px white);
+  width: 50%;
+  justify-content: flex-start;
+  border: none;
+}
+
+/* Animations */
+
+.timer {
+  animation-name: timer;
+  animation-duration: 60s;
+  animation-iteration-count: 1;
+  animation-direction: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes timer {
+  0% {
+    clip-path: inset(0 0 0);
+  }
+  50% {
+    filter: hue-rotate(20deg);
+  }
+  70% {
+    filter: hue-rotate(45deg);
+  }
+  100% {
+    clip-path: inset(100% 0 0);
+  }
+}
+
+.glide {
+  animation-name: glide;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  /* animation-timing-function: linear; */
+  animation-fill-mode: both;
+}
+
+@keyframes glide {
+  0% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translate(1100%);
+  }
+  100% {
+    transform: translateY(280%) translate(1100%);
+  }
+}
+
+.grow_bigger {
+  animation-name: grow_bigger;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  /* animation-timing-function: linear; */
+}
+
+@keyframes grow_bigger {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: translateX(20px) scale(1.2) rotate(7deg);
+  }
+}
+
+.breathe {
+  animation-name: breathe;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scaleY(1);
+  }
+  20% {
+    transform: scaleY(1.02);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.beer_glide1 {
+  /* animation-delay: 0.01s; */
+  animation-duration: 8s;
+}
+.beer_glide2 {
+  /* animation-delay: 0.3s; */
+  animation-duration: 5s;
+}
+
+.shot_glide1 {
+  /* animation-delay: 0.75s; */
+  animation-duration: 3s;
+}
+.shot_glide2 {
+  animation-delay: 0.3s;
+  animation-duration: 7s;
+}
+
+.broken_glide1 {
+  /* animation-delay: 0.5s; */
+  animation-duration: 7s;
+}
+.broken_glide2 {
+  /* animation-delay: 0.12s; */
+  animation-duration: 5s;
+}
+
+.water_glide1 {
+  /* animation-delay: 0.25s; */
+  animation-duration: 9s;
+}
+.water_glide2 {
+  /* animation-delay: 0.42s; */
+  animation-duration: 5s;
+}
+
+.no_display {
+  display: none;
+}
+
+.forsvind {
+  animation-name: forsvind;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes forsvind {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.frys {
+  animation-play-state: paused;
+}
+
+.drink_pos {
+  top: 38%;
+  left: 48%;
+}
+
+.standard_pos {
+  top: 35%;
+  left: 7%;
+}
+
+.flinch {
+  animation-name: flinch;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  filter: drop-shadow(0px 0px 30px maroon);
+}
+
+@keyframes flinch {
+  33% {
+    transform: translateX(3px);
+  }
+  66% {
+    transform: translateX(-3px);
+  }
+}
+
+#gameover_points {
+  top: 10%;
+  left: 50%;
+  right: 5%;
+  position: absolute;
+  font-size: 30px;
+  font-family: "oliver";
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: white;
+  background-color: maroon;
+  filter: drop-shadow(0px 0px 70px black);
+  z-index: 1;
+}
+
+#winlevel_points {
+  top: 25%;
+  left: 60%;
+  right: 5%;
+  position: absolute;
+  font-size: 50px;
+  font-family: "oliver";
+  color: hsl(323, 100%, 43%);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: white;
+  background-color: greenyellow;
+  filter: drop-shadow(0px 0px 40px greenyellow);
+  z-index: 1;
+}

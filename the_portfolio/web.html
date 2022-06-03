@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="web_style.css" />
+    <title>Web</title>
+  </head>
+  <body>
+    <header>
+      <nav id="web_nav">
+        <a href="index.html" class="logo">emma pasquer.</a>
+        <ul class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="web.html">Web</a>
+          <a href="design.html">Design</a>
+          <a href="contact.html">about & Contact</a>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+
+    <div id="terminal">
+        >accessing emma pasquer's personal files... </br>
+        >bypassing <del>high tech</del> security..</br>
+        >system_breached..... </br>
+    </br>
+  ----------------------------------------
+  </br>
+  >WELCOME TO Em's <del>deep</del> web design <em>HACKER TERMINAL.</em></br>
+  >hack yourself into emma's projects by writing the right commands. </br>
+  ><b class="extra_bold">type list to get all supported commands.</b></br>
+  >all commands must be typed in lowercase.</br>
+  ---------------------------------------
+</br>
+  <div id="main">
+  </div>
+</div>
+  <div id="glitch" class="glitch_container">
+  <img class=" glitch_sprite opacity" src="pics/web_glitch/glitch_help.svg" alt="glitch help">
+</div>
+<section id="helpopup">
+  <div>
+    <button class="cross"> x </button>
+    <h2>How does this work ?</h2>
+    <p>Obviously you're note really hacking into my system to see my private files.</p>
+    <p><del>(How cool would that be though ?)</del></p>
+    <br>
+    <p>So the deal is, you have to <em>write a word</em> (or command) on the pink line.</p>
+    <p>But what word should you write, you'd ask me. Good question.</p>
+    <p>Is you write <em>list</em> on there and <em>click the "go" button</em>,<br>it'll show you a list of all the commands available.</p>
+    <p>This way you get to chose what you want to see.</p>
+    <p>I have a KEA file, which showcases my KEA (the school i'm at) projects. <del>the ones i'm proud of</del></p>
+    <p>I have a perso file, wich are the projects I've made on my own <del>for fun.</del></p>
+    <p>And you also have a small easter egg</p>
+    <p>but now that you have the gist of it, i'll let you find that out by yourself.</p>
+    <p>enjoy.</p>
+  </div>
+  <img src="pics/web_glitch/glitch.svg" alt="glitch">
+</section>
+
+</main>
+    <footer id="web_footer">
+      <div class="copy">&copy Emma Pasquer 2022</div>
+      <div class="soMe">
+        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/"
+          >linkedin</a
+        >
+        <a href="https://www.instagram.com/emma_pasquer_art/">instagram</a>
+        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw"
+          >youtube</a
+        >
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+
+      const glitch = document.querySelector("#glitch");
+      const helpopup = document.querySelector("#helpopup");
+      const cross = document.querySelector(".cross");
+
+      glitch.addEventListener("click", showGlitch);
+      helpopup.style.display = "none";
+
+      function showGlitch() {
+        helpopup.style.display = "flex";
+        glitch.style.display = "none"
+        cross.addEventListener("click", offGlitch);       
+      }
+
+      function offGlitch() {
+        helpopup.style.display = "none";
+        glitch.style.display = "block";
+      }
+
+      window.onload = function () {
+        // engage();
+        commandPrompt();
+      };
+
+      //////////////////////////////////////
+      ////       Gets Input command    /////
+      //////////////////////////////////////
+
+      function getCommand() {
+        var command = document.getElementById("command").value;
+        var main = document.getElementById("main");
+        switch (command) {
+          case "list":
+            main.innerHTML =
+            "List of commands:</br>kea</br>perso</br>clear</br>answer</br></br>";
+            commandPrompt();
+            break;
+
+        case "kea":
+            kea();
+            break;
+
+        case "perso":
+            perso();
+            break;
+
+        case "clear":
+            clear();
+            break;
+
+        case "answer":
+            answer();
+            break;
+
+          default:
+            defaultFunction();
+        }
+      }
+
+      ////////////////////////////////////////
+      ////     Command Prompt            /////
+      ////////////////////////////////////////
+
+      function commandPrompt() {
+        var main = document.getElementById("main");
+        var test = document.createElement("div");
+        main.appendChild(test);
+        test.innerHTML =
+          "</br>ur_h4ck3r@username:  ><input id='command' type='text'/><input id='go' type='button'value='Go' onclick='getCommand()'/></br></br>";
+          test.style.position = "sticky 900px"
+      }
+
+      ////////////////////////////////////
+      ////          Clear Command     ////
+      ////////////////////////////////////
+
+      function clear() {
+        // main.innerHTML =
+        //   "ur_hacker@username:  ><input id='command' type='text'/><input id='go' type='button'value='Go' onclick='getCommand()'/></br></br>";
+        location.reload(); 
+      }
+
+      ///////////////////////////////////
+      ////        Progress Bar      /////
+      ///////////////////////////////////
+      function progressBar() {
+        var connect = document.createElement("div");
+        main.appendChild(connect);
+        connect.innerHTML =
+          "<div id='connect'><div class='progressBar'></div></div><style media='screen'>.progressBar{height:10px;background:#01ff19;width: 50%;animation: progressBarAnim 3.5s 1 0s;}@keyframes progressBarAnim {0%{ width: 0%; } 20%{width:5%;}50%{ width: 20%;}75%{ width:25%;} 85%{ width:35%;}90%{ width:40%;}100%{width: 50%;}}</style>";
+      }
+
+      ///////////////////////////////////
+      ////       Default Function   /////
+      ///////////////////////////////////
+      function defaultFunction() {
+        main.innerHTML =
+          "Please only enter command in lowercase</br>For list of supported commands type List";
+        commandPrompt();
+      }
+
+      ///////////////////////////////////
+      ////        Kea               /////
+      ///////////////////////////////////
+
+      function kea() {
+          progressBar();
+          setTimeout(showKea, 3500);
+      }
+
+      function showKea() {
+          console.log("showKea")
+          var main = document.getElementById("main");
+
+        //   let section_kea = document.getElementById("section_kea");
+          let section_kea = document.createElement("h3");
+        //   section_kea.classList.toggle("show");
+          main.appendChild(section_kea);
+          section_kea.innerHTML = "kea projects."
+
+          let whatToDo = document.createElement("div");
+          main.appendChild(whatToDo);
+
+          window.scrollTo(0, 1000);
+          whatToDo.style.paddingBottom = "110px";
+          whatToDo.style.transition = "2s";
+          whatToDo.innerHTML = "What do you want to do with that ? </br> click on the directory you wish to enter";
+
+       setTimeout(progressKea, 1000); 
+      }
+
+      function progressKea() {
+        progressBar()
+        setTimeout(openKea, 2200); 
+      }
+
+      function openKea() {
+            console.log("openKea");
+
+            
+            let section_kea_project1 = document.createElement("a");
+            section_kea_project1.href = "project_kea_1.html"
+            section_kea_project1.innerHTML = "project_1"
+            main.appendChild(section_kea_project1);
+            section_kea_project1.style.transition = "2s";
+            section_kea_project1.style.paddingBottom = "110px";
+            section_kea_project1.style.breakAfter;
+            window.scrollTo(0, 2400);
+
+            let section_kea_project2 = document.createElement("a");
+            section_kea_project2.href = "project_kea_2.html"
+            section_kea_project2.innerHTML = "project_2"
+            main.appendChild(section_kea_project2);
+            section_kea_project2.style.transition = "2s";
+            section_kea_project2.style.paddingBottom = "110px";
+            window.scrollTo(0, 2400);
+
+      }
+
+
+      ///////////////////////////////////
+      ////        Perso             /////
+      ///////////////////////////////////
+
+      function perso() {
+          progressBar();
+          setTimeout(showPerso, 2000);
+      }
+
+      function showPerso() {
+          console.log("showPerso");
+          var main = document.getElementById("main");
+
+          let section_perso = document.createElement("h3");
+          main.appendChild(section_perso);
+          section_perso.innerHTML = "own projects."
+
+          let whatToDoNow = document.createElement("div");
+          main.appendChild(whatToDoNow);
+
+          window.scrollTo(0, 1000);
+          whatToDoNow.style.paddingBottom = "110px";
+          whatToDoNow.style.transition = "2s";
+          whatToDoNow.innerHTML = "What do you want to do with that ? </br> i dare to click on one of them. go on.";
+
+       setTimeout(progressPerso, 2200); 
+      }
+
+            function progressPerso() {
+        progressBar()
+        setTimeout(openPerso, 2200); 
+      }
+
+
+      function openPerso() {
+            console.log("openPerso");
+
+
+            let section_perso_project1 = document.createElement("a");
+            section_perso_project1.href = "project_perso_1.html"
+            section_perso_project1.innerHTML = "project_perso_1"
+            main.appendChild(section_perso_project1);
+            section_perso_project1.style.transition = "2s";
+            section_perso_project1.style.paddingBottom = "110px";
+            section_perso_project1.style.breakAfter;
+            window.scrollTo(0, 2400);
+      }
+
+
+      ///////////////////////////////////
+      ////        Answer            /////
+      ///////////////////////////////////
+
+        function answer() {
+            console.log("showPerso");
+            var main = document.getElementById("main");
+
+            let answer_is = document.createElement("h3");
+            main.appendChild(answer_is);
+            answer_is.innerHTML = "42."
+        }
+// could be cool si pour le jeu ca pouvait etre comme si tu telechargeais un .exe de la demo ? mais apres ca suit pas le breadcrumbing.....
+
+
+    </script>
+  </body>
+</html>

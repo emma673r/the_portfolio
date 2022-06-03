@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project kea 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">emma pasquer.</a>
+        <ul class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="web.html">Web</a>
+          <a href="design.html">Design</a>
+          <a href="contact.html">about & Contact</a>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>bubbly hair, the (fake) client-case.</h1>
+      <div class="wrapper">
+        <section class="wrappee">
+          <h2>About the project.</h2>
+          <p>Bubbly hair is a web design solution for an invented company.</p>
+          <p>
+            It was a team based project where we had to invent a client and do
+            ux-ui research, designs and web solution.
+          </p>
+          <p>Moreover we had to make a database and create produkt and a filtering.</p>
+          <p>We learnt to use json and fetch in this project.</p>
+          <p>enjoy.</p>
+        </section>
+      </div>
+      <div class="btn_div">
+        <button class="some_btn">
+          <a href="bubbly/index.html">Visit the site</a>
+        </button>
+      </div>
+    </main>
+    <footer>
+      <div class="copy">&copy Emma Pasquer 2022</div>
+      <div class="soMe">
+        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/"
+          >linkedin</a
+        >
+        <a href="https://www.instagram.com/emma_pasquer_art/">instagram</a>
+        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw"
+          >youtube</a
+        >
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <style>
+      @font-face {
+        font-family: organo;
+        src: url(fonts/organo.woff2);
+      }
+
+      h1 {
+        font-family: organo;
+        font-size: 2.2em;
+      }
+
+      .wrapper {
+        display: flex;
+        padding: 0 2% 0 2%;
+        justify-content: space-evenly;
+      }
+
+      .wrappee {
+        width: auto;
+        display: grid;
+        justify-items: start;
+        max-width: 45ch;
+        padding: 20px;
+        border-style: solid;
+        border-radius: 25px;
+        border-color: black;
+        border-width: 5px;
+        box-shadow: 16px 16px 0px 0px #f500a0;
+      }
+
+      .btn_div {
+        display: flex;
+        place-content: center;
+        padding-top: 40px;
+      }
+    </style>
+  </body>
+</html>

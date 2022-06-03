@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vis detaljer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+article p {
+    padding-left: 10%;
+    padding-top: 20%;
+    line-height: 30px;
+}
+
+article {
+    padding-bottom: 10%;
+}
+
+h3 {
+    padding-top: 10%;
+}
+
+    hr {
+        display: none;
+    }
+
+    .knapper {
+        display: flex;
+        gap: 15px;
+         padding-left: 10%;
+    }
+
+    .pris, .str, .fave_ikon {
+        padding: 0;
+        margin: 0;
+      
+    }
+
+    .fave_ikon {
+       margin: 10px;
+       margin-top: 4%;
+    }
+
+    
+        @media (min-width: 600px) {
+         
+            hr {
+                display: block;
+            }
+
+                article {
+            display: grid;
+            grid-template-columns: 1fr 0.1fr 1fr;
+            grid-template-rows: auto;
+            line-height: 30px;
+        }
+
+        article p {
+            margin: 0;
+            padding: 0;
+            padding-top: 3%;
+            display: flex;
+            flex-wrap: wrap;
+            width: 40ch;
+        }
+
+        #artikel_image {
+            width: 100%;
+            max-width: 100%;
+            grid-column: span 4;
+            cursor: default;
+            padding: none;
+        }
+
+        #artikel_image:hover {
+           transform: none;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .produkt {
+            display: grid;
+        }
+
+        #image_wrap {
+            min-width: 400px;
+            max-width: 600px;
+        }
+
+        #content_wrap {
+            width: fit-content;
+        }
+
+        .pris{
+            font-size: larger;
+            font-weight: bolder;
+            width: fit-content;
+        }
+
+        .str {
+            width: fit-content;
+        }
+
+        }
+
+
+    </style>
+</head>
+<body>
+        <header>
+      <p class="fragt_bar">Fri fragt ved køb over 399,00 kr / Hurtig levering 1-2 hverdage</p>
+      <p class="info_bar">25% på udvalgte produkter samt en gave til alle klubmedlemmer<a href="error.html"> | Klik Her</a></p>
+      <div class="header_bar">
+      <div id="logo_container">
+         <a href="index.html"><img id="logo" src="ikoner/logo.svg" alt="desk_logo"/></a>
+      
+      <nav>
+        <ul class="burger_menu">
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="error.html">Nyheder</a></li>
+          <li><a href="error.html">Tilbud</a></li>
+          <li><a href="omos.html">Om os</a></li>
+          <li><a href="error.html">Bliv medlem</a></li>
+          <li>
+            <a href="error.html"
+              ><img class="ikon" src="ikoner/favorite.svg" alt="wishlist"
+            /></a>
+          </li>
+          <li>
+            <a href="error.html"
+              ><img class="ikon" src="ikoner/cart.svg" alt="cart"
+            /></a>
+          </li>
+          <li>
+            <a href="error.html"
+              ><img class="ikon" src="ikoner/profil.svg" alt="profil"
+            /></a>
+          </li>
+        </ul>
+        <div class="button" id="hamburger">
+          <div id="burger_closed"></div>
+          <div id="burger_opened"></div>
+        </div class="button">
+      </nav></div></div></header>
+      <main>
+ 
+      <button>Tilbage</button>
+      <article>
+    <div id="image_wrap">
+        <img id="artikel_image" class="image produkt_ikon" src="" alt=""/></div>
+        <div class="flex"><hr></div>
+        <div id="content_wrap">
+             <h3 class="navn"></h3>
+          <p class="desc"></p>
+          <div class="knapper">
+          <p class="str"></p>
+          <p class="pris">Pris : </p></div>
+   <div class="knapper">
+          <button>Læg i kurv</button>
+            <div class="fave_ikon"></div></div>
+            <h3>Indhold</h3>
+            <p class="indhold"></p>
+        </div>
+       
+      </article></main>
+    <footer>
+      <div class="adresse">
+        <span>Addresse</span>
+        <span>Bubbly AS Shampoo vej 2 <br> 2300 København S Denmark</span>
+        <span>CVR: 33776644302</span>
+      </div>
+      <div>
+      <img class="bubbly_footer" src="ikoner/sticker.svg" alt="bubbly sticker"></div>
+      <div class="kontakt">
+        <span>Kontakt</span>
+        <span>Kundeservice: Tlf. 32 500 800</span>
+        <span> Mail : ordre@bubbly.dk</span><div class="so_me">
+          <a href="https://www.facebook.com/"><img class="facebook" src="ikoner/facebook.svg" alt="facebook"></a>
+          <a href="https://www.instagram.com/"><img class="instagram" src="ikoner/insta.svg" alt="instagram"></a></div>
+        </div>
+      </footer>
+
+
+    <script>
+
+      // mine contanter
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    const article = document.querySelector("article");
+
+    // variabel
+    let type;
+
+    // samme url og key som i js filen for min json data
+    // jeg giver min url id'et på den produkt der er blevet clicked på
+    const url = `https://shampoobizz-80fc.restdb.io/rest/produkt/${id}`;
+    const key = "621205d334fd621565858848";
+
+
+
+    // henter data'en
+    async function hentData() {
+      const respons = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-apikey': key
+        }
+      });
+      type = await respons.json();
+
+      vis();
+    }
+
+    function vis(){
+
+      // får min artikle til at være synlig
+      article.style.display = "grid";
+      // putter indhold i min artikel
+      article.querySelector(".image").src = `http://emsportfolio.dk/kea/07_dynamisk/bubbly_hair_passion_projekt/produkter/${type.billedenavn}.png`;
+      article.querySelector(".image").alt = type.navn;
+      article.querySelector(".navn").textContent = type.navn;
+      article.querySelector(".str").textContent = `${type.str} ml`;
+      article.querySelector(".pris").textContent = `${type.pris} dkk`;
+      article.querySelector(".desc").textContent = type.beskrivelse;
+      article.querySelector(".indhold").textContent = type.indhold;
+    }
+
+    hentData();
+
+
+
+    // fave/ wishlist hjerte ikon clickbar se js filen fro kommentarene for den
+    const fave = document.querySelectorAll(".fave_ikon");
+
+    fave.forEach((favorite) => favorite.addEventListener("click", faveClicked));
+
+    function faveClicked() {
+      if (this.classList.contains("fave_ikon_clicked")) {
+        this.classList.remove("fave_ikon_clicked");
+      } else {
+        this.classList.add("fave_ikon_clicked");
+      }
+    }
+    
+    // når jge clicker på tilbage knappen skal jeg gå tilbage til den side jeg kom fra
+    document.querySelector("button").addEventListener("click", ()=>{ history.back()});
+    
+    </script>
+</body>
+</html>

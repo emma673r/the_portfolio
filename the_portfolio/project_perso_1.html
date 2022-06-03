@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project perso 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_perso_1.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">emma pasquer.</a>
+        <ul class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="web.html">Web</a>
+          <a href="design.html">Design</a>
+          <a href="contact.html">about & Contact</a>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>emma's Magic 8 ball</h1>
+      <div class="wrapper">
+        <section class="wrappee">
+          <h2>About the project.</h2>
+          <p>I wanted to practice javascript and made an eight ball.</p>
+          <p>
+            I got inspired by a school project where we learned math and random.
+          </p>
+          <p>I thought i could use it to make my own eight ball.</p>
+          <p>
+            to make it funnier (mainly for myself), i decided to make the
+            answers sarcastic.
+          </p>
+          <p>enjoy.</p>
+        </section>
+      </div>
+      <section>
+        <div id="content">
+          <p id="info">
+            Ask me something and click on the Magic 8 Ball to get your answer.
+            <br /><br />
+            If you Dare.
+          </p>
+          <input type="text" id="question" />
+          <div id="eight-ball" class="eight-ball">
+            <div class="answer">
+              <p id="eight">8</p>
+              <p id="answer"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="copy">&copy Emma Pasquer 2022</div>
+      <div class="soMe">
+        <a href="https://www.linkedin.com/in/emma-pasquer-35a361221/"
+          >linkedin</a
+        >
+        <a href="https://www.instagram.com/emma_pasquer_art/">instagram</a>
+        <a href="https://www.youtube.com/channel/UCWs0_0p3L7Wrzca_Ct1TMiw"
+          >youtube</a
+        >
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      // we define answers
+      let answers = [
+        "42.",
+        "Haha.",
+        "You should get a new tattoo.",
+        "1. Put in a box. 2. Throw box away.",
+        "Ask your mom.",
+        "Ah I see. Yes.",
+        "Meh.",
+        "Go f yourself.",
+        "Yes, i guess",
+        "The star tell me that maybe",
+        "For sure honey!!",
+        "My reply is    no.",
+        "I dont want to answer THAT",
+        "You go girl !!!!!!",
+        "Forget about it",
+        "Was that YOUR idea ?...",
+        "Ask again...eh .. never. thx xoxo",
+        "If your friends did it, would you ?",
+        "Not in the mood now, ask later",
+        "Try and be smart, shake again",
+        "Sleep on it. forever.",
+        "Ask the village idiot",
+        "Think.... use ur head bro",
+        "You already know the answer freak",
+        "Ooof. Shake again.",
+      ];
+
+      let eight = document.querySelector("#eight");
+      let answer = document.querySelector("#answer");
+      let eightball = document.querySelector("#eight-ball");
+      let question = document.querySelector("#question");
+
+      window.addEventListener("load", sidenVises);
+
+      function sidenVises() {
+        eightball.addEventListener("click", clickEightBall);
+      }
+
+      function clickEightBall() {
+        eightball.classList.add("shake");
+
+        if (question.value.length < 1) {
+          alert("Did you forget your question?");
+        } else {
+          eight.textContent = "";
+          let num = Math.floor(Math.random() * Math.floor(answers.length));
+          console.log(num);
+          answer.textContent = answers[num];
+        }
+        eightball.addEventListener("animationend", shakeRemove);
+      }
+      function shakeRemove() {
+        eightball.classList.remove("shake");
+      }
+    </script>
+  </body>
+</html>
