@@ -208,6 +208,10 @@ footer {
 
 /* tablet */
 @media only screen and (max-width: 760px) {
+    * {
+    overflow-x: hidden;
+  }
+
   #terminal {
     font-size: 10pt;
     justify-self: left;
@@ -226,25 +230,54 @@ footer {
   }
 
   #helpopup img {
-width: 60%;
+    width: 60%;
   }
 }
 
 /* mobile */
 @media only screen and (max-width: 640px) {
+
+  * {
+    overflow-x: hidden;
+  }
+
   #terminal {
     padding-top: 32%;
+    padding-left: 5px;
+  }
+
+ #command {
+   width:12ch;
+ }
+
+  #glitch {
+    position:absolute;
   }
 
   .glitch_container {
     width: 55%;
+    position: fixed;
     top: 8%;
     left: 15%;
-    z-index: 999;
+    z-index: 700;
   }
 
   #helpopup {
-    top: ;
-    left: ;
+    top: 0;
+    margin-top: 10px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+  }
+
+  #helpopup img{
+    display: none;
+  }
+
+  #helpopup h2 {
+    padding-top: 5px;
+  }
+
+  .cross {
+    font-size: 2em;
   }
 }

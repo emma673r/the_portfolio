@@ -210,6 +210,7 @@ a:hover,
   justify-content: space-around;
   width: 50%;
   text-transform: lowercase;
+  z-index: 999;
 }
 
 .nav-links a {
@@ -242,15 +243,17 @@ a:hover,
 }
 
 @media only screen and (max-width: 760px) {
+
+    * {
+    overflow-x: hidden;
+  }
+
   nav {
     justify-content: space-between;
     padding: 0 5vw;
   }
 
   .nav-links {
-
-/* overflow scroll and idk how to get it out */
-
     position: absolute;
     right: 0;
     top: 8vh;
@@ -265,7 +268,7 @@ a:hover,
     transition: All 0.5s ease-in;
     background: black;
     opacity: 0.85;
-    z-index: 400;
+    z-index: 999;
     overflow: clip;
   }
 
@@ -300,6 +303,10 @@ a:hover,
 }
 
 @media only screen and (max-width: 640px) {
+  * {
+    overflow-x: hidden;
+  }
+
   nav {
     justify-content: space-between;
     padding: 0 5vw;
@@ -331,9 +338,14 @@ a:hover,
 }
 
 @media only screen and (max-width: 460px) {
+  * {
+    overflow-x: hidden;
+  }
+
   .nav-links {
     width: 100%;
     transition: All 0.5s ease;
+
   }
 
   h1 {
