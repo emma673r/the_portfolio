@@ -7,10 +7,15 @@ body {
   letter-spacing: 0.15em; */
 }
 
-
 /* body * {
   -webkit-user-select: none;
 } */
+
+h1 {
+  font-size: 2em;
+  padding: 0;
+  padding-bottom: 40px;
+}
 
 .wrap {
   position: relative;
@@ -23,8 +28,8 @@ body {
 .window {
   overflow: hidden;
   position: relative;
-  background: black;
-   border: solid 2px black;
+  background: white;
+  border: solid 2px black;
 }
 
 #carousel {
@@ -39,46 +44,100 @@ body {
   width: 500px;
   cursor: pointer;
   float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-style:solid ;
+  border-style: solid;
   border-width: 0px 2px 0px 0px;
   border-color: black;
-
 }
 
 .slide#b1 {
-  background: #556270;
+  background: white;
 }
 
+/* .slide#b2 {
+  height: 300px;
+  width: 500px;
+
+  opacity: 1;
+}
+
+.slide#b2::after {
+  content: "";
+  height: 300px;
+  width: 500px;
+  background-image: url(pics/content/design_1/3_back.png);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #f500a0;
+
+}
+
+.slide#b2:hover {
+  opacity: 0.4;
+background-blend-mode: lighten;
+} */
+
 .slide#b2 {
-  background: #4ECDC4;
+  height: 300px;
+  width: 500px;
+  background-image: url(pics/content/design_1/3_back.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.inside {
+  height: 300px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  cursor: grab;
+  transition: 0.7s ease;
+}
+
+.inside:hover {
+  opacity: 1;
+  background: hsla(0, 0%, 0%, 0.9);
+  color: white;
+}
+
+.inside a {
+  transition: 0.5s ease;
+  transform: translateX(0%);
+}
+
+.inside a:hover {
+  letter-spacing: 5px;
 }
 
 .slide#b3 {
-  background: #9CE462;
+  background: white;
 }
 
 .slide#b4 {
-  background: #FF6B6B;
+  background: white;
 }
 
 .slide#b5 {
-  background: #C44D33;
+  background: white;
 }
 
 .btn {
-   border: solid 2px black;
-   background-color: transparent;
-   padding: 5px;
+  border: solid 2px black;
+  background-color: transparent;
+  padding: 5px;
 }
 
 .btn:hover {
   color: #f500a0;
 }
 
-.btn#prev, .btn#next {
+.btn#prev,
+.btn#next {
   cursor: pointer;
   position: absolute;
   bottom: -80px;
@@ -86,7 +145,7 @@ body {
   font-family: source code pro;
 }
 
-.btn#prev  {
+.btn#prev {
   left: 0;
 }
 
