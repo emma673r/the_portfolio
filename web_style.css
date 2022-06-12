@@ -75,6 +75,10 @@ main {
   padding-left: 20px;
 }
 
+#glitch, .cross {
+  cursor: pointer;
+}
+
 #main {
   height: 50vh;
   display: flex;
