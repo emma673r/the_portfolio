@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="design_style.css" />
     <link rel="shortcut icon" href="pics/icons/favicon.svg" type="image/svg" />
+    <script
+      src="http://code.jquery.com/jquery-3.1.0.min.js"
+      integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+      crossorigin="anonymous"
+    ></script>
     <title>Design</title>
   </head>
   <body>
@@ -26,92 +31,22 @@
         </div>
       </nav>
     </header>
+    <main>
+      <div class="wrap">
+        <div class="window">
+          <div id="carousel">
+            <span class="slide" id="b1">SLIDE-1</span>
 
-    <main class="options">
-      <div
-        class="option active"
-        style="
-          --optionBackground: url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);
-        "
-      >
-        <div class="shadow"></div>
-        <div class="label">
-          <div class="icon">
-            <i class="fas fa-walking"></i>
-          </div>
-          <div class="info">
-            <div class="main">Blonkisoaz</div>
-            <div class="sub">Omuke trughte a otufta</div>
+            <!-- ********slide b2 is the first one to pop up***** -->
+            <!-- **** chaque slide va avoir une image en background avec opacity ou gaussian blur et un titre a la place de slide-1 etc, une image par projet et chaque slide a un eventlistener click ou lien qui emmene a la page du projet **** -->
+            <span class="slide" id="b2">SLIDE-2</span>
+            <span class="slide" id="b3">SLIDE-3</span>
+            <span class="slide" id="b4">SLIDE-4</span>
+            <span class="slide" id="b5">SLIDE-5</span>
           </div>
         </div>
-      </div>
-      <div
-        class="option"
-        style="
-          --optionBackground: url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);
-        "
-      >
-        <div class="shadow"></div>
-        <div class="label">
-          <div class="icon">
-            <i class="fas fa-snowflake"></i>
-          </div>
-          <div class="info">
-            <div class="main">Oretemauw</div>
-            <div class="sub">Omuke trughte a otufta</div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="option"
-        style="
-          --optionBackground: url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);
-        "
-      >
-        <div class="shadow"></div>
-        <div class="label">
-          <div class="icon">
-            <i class="fas fa-tree"></i>
-          </div>
-          <div class="info">
-            <div class="main">Iteresuselle</div>
-            <div class="sub">Omuke trughte a otufta</div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="option"
-        style="
-          --optionBackground: url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);
-        "
-      >
-        <div class="shadow"></div>
-        <div class="label">
-          <div class="icon">
-            <i class="fas fa-tint"></i>
-          </div>
-          <div class="info">
-            <div class="main">Idiefe</div>
-            <div class="sub">Omuke trughte a otufta</div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="option"
-        style="
-          --optionBackground: url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);
-        "
-      >
-        <div class="shadow"></div>
-        <div class="label">
-          <div class="icon">
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="info">
-            <div class="main">Inatethi</div>
-            <div class="sub">Omuke trughte a otufta</div>
-          </div>
-        </div>
+        <button id="prev" class="btn">PREV</button>
+        <button id="next" class="btn">NEXT</button>
       </div>
     </main>
     <footer>
@@ -126,6 +61,62 @@
         >
       </div>
     </footer>
+
+    <script>
+      var carousel = $("#carousel"),
+        threshold = 150,
+        slideWidth = 500,
+        dragStart,
+        dragEnd;
+
+      $("#next").click(function () {
+        shiftSlide(-1);
+      });
+      $("#prev").click(function () {
+        shiftSlide(1);
+      });
+
+      carousel.on("mousedown", function () {
+        if (carousel.hasClass("transition")) return;
+        dragStart = event.pageX;
+        $(this).on("mousemove", function () {
+          dragEnd = event.pageX;
+          $(this).css("transform", "translateX(" + dragPos() + "px)");
+        });
+        $(document).on("mouseup", function () {
+          if (dragPos() > threshold) {
+            return shiftSlide(1);
+          }
+          if (dragPos() < -threshold) {
+            return shiftSlide(-1);
+          }
+          shiftSlide(0);
+        });
+      });
+
+      function dragPos() {
+        return dragEnd - dragStart;
+      }
+
+      function shiftSlide(direction) {
+        if (carousel.hasClass("transition")) return;
+        dragEnd = dragStart;
+        $(document).off("mouseup");
+        carousel
+          .off("mousemove")
+          .addClass("transition")
+          .css("transform", "translateX(" + direction * slideWidth + "px)");
+        setTimeout(function () {
+          if (direction === 1) {
+            $(".slide:first").before($(".slide:last"));
+          } else if (direction === -1) {
+            $(".slide:last").after($(".slide:first"));
+          }
+          carousel.removeClass("transition");
+          carousel.css("transform", "translateX(0px)");
+        }, 700);
+      }
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

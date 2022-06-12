@@ -130,8 +130,9 @@ footer {
   color: white;
 }
 
-.some_btn:hover,
-.some_btn:focus {
+.some_btn:hover
+/* .some_btn:focus */
+{
   color: black;
   box-shadow: 0 0 0 0 #f500a0, inset 6em 3.5em 0 0 #f500a0;
 }
