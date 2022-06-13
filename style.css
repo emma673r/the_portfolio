@@ -45,6 +45,12 @@ a {
 
 h1 {
   padding-bottom: 80px;
+  font-size: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f500a0;
 }
 
 h2 {
@@ -52,9 +58,37 @@ h2 {
   padding-top: 20px;
 }
 
+h3, h4 {
+  padding-top: 10px;
+}
+
+figure {
+  padding-bottom: 30px;
+}
+
 img {
   height: auto;
   width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  padding: 0 2% 0 2%;
+  justify-content: space-evenly;
+}
+
+.wrappee {
+  width: auto;
+  display: grid;
+  justify-items: start;
+  max-width: 45ch;
+  padding: 20px;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  border-width: 5px;
+  box-shadow: 16px 16px 0px 0px #f500a0;
+  margin-bottom: 80px;
 }
 
 .contact_pic {
@@ -68,12 +102,9 @@ img {
   font-family: art;
 }
 
-h1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+#h1 {
   font-size: 5em;
+  color: black;
 }
 
 nav {
@@ -131,8 +162,7 @@ footer {
 }
 
 .some_btn:hover
-/* .some_btn:focus */
-{
+/* .some_btn:focus */ {
   color: black;
   box-shadow: 0 0 0 0 #f500a0, inset 6em 3.5em 0 0 #f500a0;
 }
@@ -244,8 +274,7 @@ a:hover,
 }
 
 @media only screen and (max-width: 760px) {
-
-    * {
+  * {
     overflow-x: hidden;
   }
 
@@ -346,7 +375,6 @@ a:hover,
   .nav-links {
     width: 100%;
     transition: All 0.5s ease;
-
   }
 
   h1 {

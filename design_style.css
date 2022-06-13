@@ -83,6 +83,7 @@ background-blend-mode: lighten;
 .slide#b2 {
   height: 300px;
   width: 500px;
+  /* !!! webp !!!!! */
   background-image: url(pics/content/design_1/3_back.png);
   background-size: cover;
   background-position: center;
