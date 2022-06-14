@@ -1,3 +1,8 @@
+@font-face {
+  font-family: freewind;
+  src: url(fonts/freewind-webfont.woff2);
+}
+
 body {
   /* background: #333;
   color: #fff;
@@ -12,9 +17,33 @@ body {
 } */
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   padding: 0;
   padding-bottom: 40px;
+}
+
+.wrappee h2 {
+  font-family: source code pro;
+}
+
+h2 {
+  font-size: 2, 2em;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+h4 {
+  font-size: 1.5em;
+  color: red;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: freewind;
 }
 
 .wrap {
@@ -23,6 +52,10 @@ h1 {
   height: 300px;
   margin: 0 auto;
   /* box-shadow: 10px 10px 7px 0px rgba(0, 0, 0, 0.25); */
+}
+
+.wrappee {
+  text-align: start;
 }
 
 .window {
@@ -53,38 +86,10 @@ h1 {
   background: white;
 }
 
-/* .slide#b2 {
-  height: 300px;
-  width: 500px;
-
-  opacity: 1;
-}
-
-.slide#b2::after {
-  content: "";
-  height: 300px;
-  width: 500px;
-  background-image: url(pics/content/design_1/3_back.png);
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: #f500a0;
-
-}
-
-.slide#b2:hover {
-  opacity: 0.4;
-background-blend-mode: lighten;
-} */
-
 .slide#b2 {
   height: 300px;
   width: 500px;
-  /* !!! webp !!!!! */
-  background-image: url(pics/content/design_1/3_back.png);
+  background-image: url(pics/content/design_1/hoodie/3_back.webp);
   background-size: cover;
   background-position: center;
 }
@@ -160,4 +165,63 @@ background-blend-mode: lighten;
 
 footer {
   margin-top: 150px;
+}
+
+/* gallery */
+
+.container_gallery {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-wrapper {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.gallery {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+
+.gallery-img {
+  max-width: 100%;
+    border: black 2px solid;
+}
+
+.gallery-im-caption {
+  margin: 0;
+  padding: 8px;
+
+}
+
+@media screen and (min-width: 769px) {
+  .gallery-wrapper {
+    max-width: 1240px;
+  }
+
+  .gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-item {
+    padding: 20px;
+  }
+
+  .gallery-img {
+    min-width: 350px;
+    max-width: 350px;
+  }
 }
