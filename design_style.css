@@ -12,9 +12,30 @@ body {
   letter-spacing: 0.15em; */
 }
 
-/* body * {
-  -webkit-user-select: none;
-} */
+a {
+  text-decoration: none;
+}
+
+.next {
+  display: flex;
+  place-content: space-between;
+  padding-right: 15px;
+}
+
+.previous_btn {
+  width: fit-content;
+}
+
+
+.next_btn, .previous_btn{
+  width: fit-content;
+
+}
+
+video {
+  width: 100%;
+  max-height: 600px;
+}
 
 h1 {
   font-size: 2.5em;
@@ -39,11 +60,12 @@ h4 {
   color: red;
 }
 
-h1,
-h2,
-h3,
-h4 {
+.freewind {
   font-family: freewind;
+}
+
+.elite {
+  font-family: elite;
 }
 
 .wrap {
@@ -94,6 +116,22 @@ h4 {
   background-position: center;
 }
 
+.slide#b3 {
+  height: 300px;
+  width: 500px;
+  background-image: url(pics/content/design_2/dark1.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.slide#b4 {
+  background: white;
+}
+
+.slide#b5 {
+  background: white;
+}
+
 .inside {
   height: 300px;
   width: 500px;
@@ -118,18 +156,6 @@ h4 {
 
 .inside a:hover {
   letter-spacing: 5px;
-}
-
-.slide#b3 {
-  background: white;
-}
-
-.slide#b4 {
-  background: white;
-}
-
-.slide#b5 {
-  background: white;
 }
 
 .btn {
@@ -196,13 +222,12 @@ footer {
 
 .gallery-img {
   max-width: 100%;
-    border: black 2px solid;
+  border: black 2px solid;
 }
 
 .gallery-im-caption {
   margin: 0;
   padding: 8px;
-
 }
 
 @media screen and (min-width: 769px) {
@@ -223,5 +248,15 @@ footer {
   .gallery-img {
     min-width: 350px;
     max-width: 350px;
+  }
+
+  .horizontal {
+    min-width: 500px;
+    max-width: 600px;
+  }
+
+  .expo {
+    min-width: 500px;
+    max-width: 1200px;
   }
 }
